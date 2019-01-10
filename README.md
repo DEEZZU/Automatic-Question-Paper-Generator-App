@@ -21,3 +21,19 @@ Education; being the most versatile and developing sector; it requires technolog
 ### A look
 
 ![alt text](https://github.com/DEEZZU/Automatic-Question-Paper-Generator-App/blob/master/cover.png "cover page")
+
+## Using this Repo
+
+Enviroment required :
+1. JDK 8 or above
+2. Tomcat or any other server. 
+3. Netbeans or Eclipse 
+4. MySQL
+
+Run :
+1. Make sure to setup your server and download the whole project. 
+2. Make the change in Automatic-Question-Paper-Generator-App/PROJO/src/java/aqpg/Provider.java file and set the connection url, user name and password
+3. Make tables accordingly //(details below)
+4. Run the whole project using netbeans/eclipse. 
+
+
