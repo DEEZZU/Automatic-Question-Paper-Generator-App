@@ -20,7 +20,7 @@ Education; being the most versatile and developing sector; it requires technolog
 
 ### A look
 
-![alt text](https://github.com/DEEZZU/Automatic-Question-Paper-Generator-App/blob/master/cover.png "cover page")
+![](https://github.com/DEEZZU/Automatic-Question-Paper-Generator-App/blob/master/cover.png "cover page")
 
 ## Using this Repo
 
