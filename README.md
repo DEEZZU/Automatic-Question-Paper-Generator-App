@@ -36,4 +36,34 @@ Run :
 3. Make tables accordingly //(details below)
 4. Run the whole project using netbeans/eclipse. 
 
+### Tables
 
+The tables u will need in the sql for running the project.
+
+##### USER_2
+
+`login_name` | pass | type
+--- | --- | ---
+string | string | varchar(1)
+foreign key + primary key | - | - 
+
+##### USER_1
+
+`login_name` | fname | sname | lname | address | cno | gender
+--- | --- | --- | --- | --- | --- | --- 
+string | string | string | string | string | string | varchar(1)
+primary key | - | - | - | - | - | - 
+
+##### QUES_2
+
+`sno` | ques_stmt | ans | `c_sid` | level | option 1 | option 2 | option 3 | option 4 
+--- | --- | --- | --- | --- | --- | --- | --- | --- 
+string | string | varchar(1) |  string | integer | string | string | string | string 
+primary key | - | - | foreign key | - |- |- |- |- 
+
+##### COURSES
+
+`c_sid` | cname
+--- | --- 
+string | string 
+primary key | - 
