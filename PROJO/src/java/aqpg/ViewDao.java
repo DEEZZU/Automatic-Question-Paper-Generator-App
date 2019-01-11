@@ -37,7 +37,7 @@ public class ViewDao {
                             bean.setFname(rs.getString(2));
                             bean.setSname(rs.getString(3));
                             bean.setLname(rs.getString(4));
-                            bean.seAdd(rs.getString(5));
+                            bean.setAdd(rs.getString(5));
                             bean.setCno(rs.getInt(6));
                             bean.setSex(rs.getString(7));
                             
