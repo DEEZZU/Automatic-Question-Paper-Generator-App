@@ -67,3 +67,7 @@ primary key | - | - | foreign key | - |- |- |- |-
 --- | --- 
 string | string 
 primary key | - 
+
+## Future Work 
+
+Adding works from Bloom's taxonomy to implement automatic question generation , making the app more versatile and technological advance.
