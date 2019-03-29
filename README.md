@@ -71,3 +71,22 @@ primary key | -
 ## Future Work 
 
 Adding works from Bloom's taxonomy to implement automatic question generation , making the app more versatile and technological advance.
+
+
+----
+
+## Errors 
+
+1. change line 29 of ViewLearner.jsp to 
+```
+<table border='0' cellpadding='0' cellspacing='15' valign="left" style="color:blue; overflow:auto; text-align:center; margin:auto;">
+```
+
+2. make changes on line 63 of ViewBean.java in Source Packages ->  aqpg : seAdd()  to setAdd()
+```
+public void setAdd(String add) {  
+    this.add = add;  
+}  
+```
+
+3. it shows deployment descriptor error , you should change the properties of the project to point to its own WEB-INF folder. Refer video : https://youtu.be/Dx37rTbAk0Q
