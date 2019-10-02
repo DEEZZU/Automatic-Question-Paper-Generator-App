@@ -13,11 +13,11 @@
         <title>Add User</title>
     </head>
     <body>
-        <jsp:useBean id="obj" class="aqpg.LoginBean"/>  
-        <jsp:setProperty property="*" name="obj"/> 
+        <jsp:useBean id="userObject" class="aqpg.LoginBean"/>  
+        <jsp:setProperty property="*" name="userObject"/> 
         <%         
-        int isSuccess=RegisterUserDao.Insertion(obj);  
-        if ( isSuccess == 1 ) { 
+        boolean isSuccess = RegisterUserDao.addNewUser(userObject);  
+        if ( isSuccess ) { 
         %> 
             <jsp:include page="AddUser.jsp"></jsp:include>
         <%
