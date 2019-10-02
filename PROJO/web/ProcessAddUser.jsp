@@ -16,17 +16,15 @@
         <jsp:useBean id="obj" class="aqpg.LoginBean"/>  
         <jsp:setProperty property="*" name="obj"/> 
         <%         
-        int status=RegisterUserDao.Insertion(obj);  
-        if(status==1){ 
-        out.println("Congratulations!!!");
+        int isSuccess=RegisterUserDao.Insertion(obj);  
+        if ( isSuccess == 1 ) { 
         %> 
-        <jsp:include page="AddUser.jsp"></jsp:include>
+            <jsp:include page="AddUser.jsp"></jsp:include>
         <%
         }
-        else{
-        out.println("Sorry !!!!");
+        else {
         %>
-        <jsp:include page="AddUser.jsp"></jsp:include>
+            <jsp:include page="AddUser.jsp"></jsp:include>
         <%
         }
         %>
