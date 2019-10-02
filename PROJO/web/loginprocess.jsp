@@ -22,43 +22,34 @@
 
         <% 
         out.println(obj.getLoginName()+" "+ obj.getPass()+ " "+obj.getType() );
-        int status=LoginDao.validate(obj);
-        out.println(status);
-        if(status==1){  
-        out.println("You r successfully logged in");  
-        session.setAttribute("session","TRUE");
-        String name= request.getParameter("loginName");
-        session.setAttribute("LoginID", name);
+        boolean isValidUser = LoginDao.validate(obj);
+        if (isValidUser) {  
+            out.println("You r successfully logged in");  
+            session.setAttribute("session","TRUE");
+            String name = request.getParameter("loginName");
+            session.setAttribute("LoginID", name);
+            String s=request.getParameter("type");
         
-        String s=request.getParameter("type");
-        
-        if(s.equals("A"))
-        {
-        //    out.println("here");
+            if(s.equals("A")) {
         %>
-        <jsp:include page="AdminMainPage.jsp"></jsp:include>
+            <jsp:include page="AdminMainPage.jsp"></jsp:include>
         <%        
-        }
-        else if(s.equals("I"))
-        {
+            }
+            else if(s.equals("I")) {
         %>
-        <jsp:include page="InstructorMainPage.jsp"></jsp:include>
+            <jsp:include page="InstructorMainPage.jsp"></jsp:include>
         <%
+            }
+            else {
+        %>
+            <jsp:include page="LearnerMainPage.jsp"></jsp:include>
+        <%
+            }
         }
-else 
-{
-%>
-<jsp:include page="LearnerMainPage.jsp"></jsp:include>
-<%
- //       out.println("here2");
-        }
-}
-        else
-        {
-%>
-<jsp:include page="index.jsp"></jsp:include>
-<%
-          out.print("Sorry, login or password error"); 
+        else {
+        %>
+            <jsp:include page="errorLogin.jsp"></jsp:include>
+        <%
         }
         %>
     </body>
