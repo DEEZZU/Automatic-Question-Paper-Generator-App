@@ -6,36 +6,29 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="aqpg.LoginDao"%> 
- 
 
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>lOGIN PROCESSING PAGE</title>
     </head>
     <body>
-        <jsp:useBean id="obj" class="aqpg.LoginBean"/>  
-        <jsp:setProperty property="*" name="obj"/> 
-        
-        
-
+        <jsp:useBean id="userObject" class="aqpg.LoginBean"/>  
+        <jsp:setProperty property="*" name="userObject"/> 
         <% 
-        out.println(obj.getLoginName()+" "+ obj.getPass()+ " "+obj.getType() );
-        boolean isValidUser = LoginDao.validate(obj);
+        boolean isValidUser = LoginDao.validate(userObject);
         if (isValidUser) {  
-            out.println("You r successfully logged in");  
-            session.setAttribute("session","TRUE");
-            String name = request.getParameter("loginName");
-            session.setAttribute("LoginID", name);
-            String s=request.getParameter("type");
+            session.setAttribute("SESSION","true");
+            String loginName = request.getParameter("loginName");
+            session.setAttribute("USER", loginName);
+            String userType = request.getParameter("type");
         
-            if(s.equals("A")) {
+            if(userType.equals("A")) { // user is of Admin Type
         %>
             <jsp:include page="AdminMainPage.jsp"></jsp:include>
         <%        
             }
-            else if(s.equals("I")) {
+            else if(userType.equals("I")) { // user is of Instructor Type
         %>
             <jsp:include page="InstructorMainPage.jsp"></jsp:include>
         <%
