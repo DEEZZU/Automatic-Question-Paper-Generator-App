@@ -10,10 +10,10 @@ public class LoginDao {
 * @param bean
 * @return int : a status code indicating presence of the user
 */
-public static int validate(LoginBean bean) throws SQLException {   
+public static boolean validate(LoginBean bean) throws SQLException {   
     private ResultSet rs = null;    
-    private boolean records=false;
-    private int status=0;
+    private boolean records = false;
+    private boolean isValidUser = false;
     private static final Logger LOGGER = Logger.getLogger(LoginDao.class.getName());
     
     try { 
@@ -28,8 +28,8 @@ public static int validate(LoginBean bean) throws SQLException {
         }  
     
     if (rs != null && rs.next() != false) {
-        status=1;
+        isValidUser = true;
     }
-    return status;
+    return isValidUser;
     }
 }
