@@ -14,23 +14,25 @@ import java.util.logging.Logger;
  */
 public class RegisterUserDao {
     
-public static int Insertion(LoginBean bean) throws SQLException{  
-ResultSet rs;    
-boolean records=false;
-int status=0;
-try{  
-Connection con=ConnectionProvider.getCon();  
-              
-PreparedStatement ps=con.prepareStatement("insert into user_2 values(?,?,?)");  
-  
-ps.setString(1, bean.getLoginName());  
-ps.setString(2, bean.getPass());  
-ps.setString(3, bean.getType());   
+    public static boolean addNewUser(LoginBean bean) throws SQLException{  
+        private ResultSet rs;    
+        private boolean records = false;
+        private boolean isInsertionSuccess = false;
+        private static final Logger LOGGER = Logger.getLogger(RegisterUserDao.class.getName());
+        try {  
+            Connection con=ConnectionProvider.getCon();  
 
-ps.execute();                
-}
-catch(Exception e){}
-status=1;
-return status;
-}
+            PreparedStatement ps=con.prepareStatement("insert into user_2 values(?,?,?)");  
+            ps.setString(1, bean.getLoginName());  
+            ps.setString(2, bean.getPass());  
+            ps.setString(3, bean.getType());   
+
+            ps.execute();                
+        }
+        catch(Exception e){
+            LOGGER.log(Level.SEVERE, "Exception occur", ex);
+        }
+        isInsertionSuccess = true;
+        return isInsertionSuccess;
+    }
 }
