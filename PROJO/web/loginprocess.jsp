@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>lOGIN PROCESSING PAGE</title>
+        <title>LOGIN PROCESSING PAGE</title>
     </head>
     <body>
         <jsp:useBean id="userObject" class="aqpg.LoginBean"/>  
